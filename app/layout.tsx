@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adrian's Portfolio",
+  title: "Uzair's Portfolio",
   description: "Modern & Minimal JS Mastery Portfolio",
 };
 
@@ -21,11 +21,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jsm-logo.png" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <ThemeProvider
+          themes={["light", "dark"]}
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          
           disableTransitionOnChange
         >
           {children}
